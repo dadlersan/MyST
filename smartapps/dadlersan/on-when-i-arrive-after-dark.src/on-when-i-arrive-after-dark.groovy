@@ -84,7 +84,7 @@ def scheduleSwitchOff(durationMinutes)
 
 def presenceHandler(evt)
 {
-    astroCheck()
+    astroCheck()  // Moved from initSettings() because rise/set times weren't updating
 
 	def t1 = now()
     def resultQ = t1 < state.riseTime || t1 >= state.setTime
@@ -100,14 +100,12 @@ def presenceHandler(evt)
 	if ((presenceValue) && (resultQ == true)) {
         switch1.on()
 		log.debug "Someone's home! ...$presenceValue and Lighting Activated"
-		if (sendPushMessage == "Yes") {sendPush("$state.riseTime - Sunrise, $state.setTime - Sunset, $t1 - Now, Dark = $resultQ")}
-		//if (sendPushMessage == "Yes") {sendPush("$presence1 $location - Lighting Activated")}
+		if (sendPushMessage == "Yes") {sendPush("$presence1 $location - Lighting Activated")}
 		scheduleSwitchOff(minutes)
     }
     else if ((presenceValue) && (resultQ == false)) {
 		log.debug "Someone's home, but's it not dark! Lighting not activated"
-		if (sendPushMessage == "Yes") {sendPush("$state.riseTime - Sunrise, $state.setTime - Sunset, $t1 - Current, Dark = $resultQ")}
-		//if (sendPushMessage == "Yes") {sendPush("$presence1 $location - Lighting NOT Activated")}
+		if (sendPushMessage == "Yes") {sendPush("$presence1 $location - Lighting NOT Activated")}
 
 	}
    
@@ -135,11 +133,9 @@ def astroCheck() {
 
 
 private getSunriseOffset() {
-	//sunriseOffsetValue ? "$sunriseOffsetValue" : null
 	sunriseOffsetValue ? (sunriseOffsetDir == "Before" ? "-$sunriseOffsetValue" : sunriseOffsetValue) : null
 }
 
 private getSunsetOffset() {
-	//sunsetOffsetValue ? "-$sunsetOffsetValue" : null
 	sunsetOffsetValue ? (sunsetOffsetDir == "Before" ? "-$sunsetOffsetValue" : sunsetOffsetValue) : null
 }
