@@ -35,9 +35,9 @@ definition(
     author: "James P",
     description: "Using power monitoring switch, monitor for a change in power consumption, and alert when the power draw stops.",
     category: "My Apps",
-    iconUrl: "http://cdn.device-icons.smartthings.com/Appliances/appliances8-icn.png",
-    iconX2Url: "http://cdn.device-icons.smartthings.com/Appliances/appliances8-icn@2x.png",
-    iconX3Url: "http://cdn.device-icons.smartthings.com/Appliances/appliances8-icn@3x.png")
+    iconUrl: "http://i.imgur.com/S0kbRv1.png",
+    iconX2Url: "http://i.imgur.com/OTZ8sA0.png",
+    iconX3Url: "http://i.imgur.com/OwcRZpt.png")
 
 preferences {
     section ("When this device stops drawing power") {
