@@ -35,9 +35,9 @@ definition(
     author: "James P",
     description: "Using power monitoring switch, monitor for a change in power consumption, and alert when the power draw stops.",
     category: "My Apps",
-    iconUrl: "http://i.imgur.com/S0kbRv1.png",
-    iconX2Url: "http://i.imgur.com/OTZ8sA0.png",
-    iconX3Url: "http://i.imgur.com/OwcRZpt.png")
+    iconUrl: "http://i.imgur.com/xpLL6rI.png",
+    iconX2Url: "http://i.imgur.com/ok68ddp.png",
+    iconX3Url: "http://i.imgur.com/LqFtUom.png")
 
 preferences {
     section ("When this device stops drawing power") {
